@@ -9,8 +9,8 @@ let initialState = {
         name: 'City',
         sys: {
             country: 'Country',
-            sunrise: 1000000,
-            sunset: 1000000,
+            sunrise: 1,
+            sunset: 1,
         },
         wind: {
             deg: 360,

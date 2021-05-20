@@ -24,7 +24,6 @@ const WeatherContainer = ({ data, setData }) => {
                 let lon = Math.round(location.longitude);
                 setLatitude(lat);
                 setLongtitude(lon);
-                console.log('lan:', latitude, 'lon:', longitude);
                 getWeatherByLocation(lat, lon);
             })
             .catch(error => {
@@ -49,7 +48,7 @@ const WeatherContainer = ({ data, setData }) => {
     return (
         <View>
             <WeatherInfo getWeatherData={getWeatherData} weatherData={data} getWeatherByLocation={getWeatherByLocation}
-            lat={latitude} lon={longitude}/>
+                lat={latitude} lon={longitude} />
         </View>
     )
 };

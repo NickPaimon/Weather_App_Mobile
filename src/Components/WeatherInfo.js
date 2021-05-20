@@ -33,8 +33,7 @@ const WeatherInfo = ({ getWeatherData, weatherData, getWeatherByLocation, lat, l
         <Text style={styles.text}>{weatherData.name}, {weatherData.sys.country} </Text>
         <Image style={styles.iconWeather} source={{ uri: icon }} />
       </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 80, marginTop: 50 }}>
-
+      <View style={styles.inputBlock}>
         <TextInput value={cityName} onChangeText={(e) => setCityName(e)} placeholder="City Name" style={styles.input} />
         <TouchableOpacity
           onPress={onIconPress}
@@ -42,45 +41,43 @@ const WeatherInfo = ({ getWeatherData, weatherData, getWeatherByLocation, lat, l
         >
           <Image style={styles.icon} source={require('../icon/location-icon.png')} />
         </TouchableOpacity>
-
-        <Button title="Find" onPress={onButtonPress} />
+        <Button title="Find" onPress={onButtonPress} color="#000000" />
       </View>
       <View style={styles.alignResultIcons}>
-        <Image style={styles.icon} source={require('../icon/sunrise.png')} />
+        <Image style={styles.resultIcons} source={require('../icon/sunrise.png')} />
         <Text style={styles.textResult}>   {sunrise}</Text>
       </View>
       <View style={styles.alignResultIcons}>
-        <Image style={styles.icon} source={require('../icon/sunset.png')} />
+        <Image style={styles.resultIcons} source={require('../icon/sunset.png')} />
         <Text style={styles.textResult}>   {sunset}</Text>
       </View>
-
-
     </View>
   )
 };
 
-
-
-
-
 const styles = StyleSheet.create({
   topBlock: {
-    marginTop: 32,
     alignItems: 'center'
+  },
+  inputBlock: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 80,
+    marginTop: 50
   },
   temp: {
     fontSize: 110,
   },
   text: {
     fontSize: 20,
-    margin: 5,
     padding: 5,
     textAlign: 'center',
   },
   iconWeather: {
     height: 44,
     width: 44,
-    marginTop: 20
+    marginTop: 10
   },
   icon: {
     height: 24,
@@ -93,12 +90,16 @@ const styles = StyleSheet.create({
     padding: 5
   },
   textResult: {
-    fontSize: 16
+    fontSize: 20
   },
   alignResultIcons: {
     flexDirection: 'row',
     alignItems: 'center'
-  }
+  },
+  resultIcons: {
+    height: 44,
+    width: 44,
+  },
 
 });
 
